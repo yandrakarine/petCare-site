@@ -1,0 +1,250 @@
+:root {
+    font-size: 62.5%;
+    --primary-color: #00856F;
+    --secondary-color-grayHeadline: #212529;
+    --secondary-color-grayParagraph: #495057;
+    --primary-color-brandBeige: #FFFAF1;
+    --primary-color-brandGreenlight: #DCE9E2;
+    --nav-height: 7.2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    overflow: overlay;
+}
+
+.wrapper {
+    width: 37.5rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-inline: 2.4rem;
+}
+
+ul {
+    list-style: none;
+}
+
+/*====================================== HEADER ===================================*/
+
+header {
+ 
+    margin-top: calc(var(--nav-height) + 4.1rem);
+}
+
+header::before {
+    content: '';
+    width: 100%;
+    height: calc(108rem + var(--nav-height));
+    background-color: var(--primary-color-brandGreenlight);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+header h4 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1.6rem;
+}
+
+header h1 {
+    font-size: 3.4rem;
+    color: var(--secondary-color-grayHeadline);
+    line-height: 130%;
+    margin-bottom: 2.4rem;
+
+}
+
+header p {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--secondary-color-grayParagraph);
+    margin-bottom: 3.2rem;
+}
+
+header button {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 4rem;
+    margin-bottom: 6rem;
+    height: 6.2rem;
+    width: 26.3rem;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header img {
+    width: 26.4rem;
+    display: block;
+    margin-inline: auto;
+    object-position: 0 2rem;
+}
+
+.stats-box {
+    width: 32.7rem;
+    margin-inline: auto;
+    padding-block: 4rem;
+
+    background-color: var(--primary-color-brandBeige);
+    display: flex;
+    gap: 6rem;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--primary-color-brandGreenlight);
+    border-radius: 0.6rem;
+}
+
+.stat h3 {
+    font-size: 4.8rem;
+    color: var(--secondary-color-grayHeadline);
+    line-height: 130%;
+    margin-bottom: 0.4rem;
+}
+
+.stat p {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    line-height: 150%;
+}
+
+/* ==================== NAVIGATION  ===================================*/
+
+nav {
+    display: flex;
+    height: var(--nav-height);
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+nav.scroll {
+    background-color: var(--primary-color);
+    width: 100vw;
+}
+
+nav.scroll svg path {
+    stroke: white;
+}
+
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ========================= MENU ===========================================*/
+
+body.menu-expanded {
+    overflow: hidden;
+}
+
+body.menu-expanded > :not(nav) {
+    display: none;
+}
+
+.menu,
+.close-menu,
+body.menu-expanded .open-menu {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu {
+    opacity: 1;
+    visibility:visible;
+}
+
+body.menu-expanded .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--primary-color);
+
+    width: 100vw;
+    height: 100vh;
+    padding-top: var(--nav-height);
+}
+
+body.menu-expanded nav {
+    position: relative;
+}
+
+.menu ul:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+
+    margin-top: 6rem;
+
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+}
+
+.menu ul li a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.menu .button {
+    background:#FFF;
+    border-radius: 4rem;
+    font-weight: 700;
+    font-size: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--primary-color);
+    display: inline-block;
+    padding: 1.6rem 3.2rem;
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+}
+
+.social-links {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+}
+
+body.menu-expanded #logo,
+body.menu-expanded button {
+    position: relative;
+    z-index: 10; 
+}
+
+body.menu-expanded button svg path {
+    stroke: white;
+}
